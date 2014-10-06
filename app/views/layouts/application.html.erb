@@ -21,7 +21,7 @@
             Welcome authenticated author 
           </li>
           <li>
-            <%= link_to "Logout", destroy_author_session_path %>
+            <%= link_to "Sign out", destroy_author_session_path, :method => :delete %>
           </li>
           <li>
             <%= link_to "Profile", edit_author_registration_path %>
@@ -29,14 +29,11 @@
 
         </ul>
     <% else %>
-    	<strong> Welcome guest. </strong>
+
        <ul class="nav navbar-nav">
-          <li>
-            <%= link_to "Logout", destroy_author_session_path, class: "btn btn-large btn-primary" %>
-          </li>
-          <li>
-            <%= link_to "Profile", edit_author_registration_path, class: "btn btn-large btn-primary" %>
-          </li>
+          <li>      <h3>     Welcome guest.  </h3> </li>
+           <li>   <%= link_to "Sign up", new_author_registration_path%></li>
+            <li>  <%= link_to "Sign in", new_author_session_path%></li>
         </ul>
     <% end %> 
     
